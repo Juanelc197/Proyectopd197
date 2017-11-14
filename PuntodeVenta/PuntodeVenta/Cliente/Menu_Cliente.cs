@@ -16,5 +16,13 @@ namespace PuntodeVenta.Cliente
         {
             InitializeComponent();
         }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            AgregarCliente from = new AgregarCliente();
+            from.Show();
+        
+        }
     }
 }

@@ -70,6 +70,7 @@
             this.btn_Cliente.TabIndex = 3;
             this.btn_Cliente.Text = "Cliente";
             this.btn_Cliente.UseVisualStyleBackColor = true;
+            this.btn_Cliente.Click += new System.EventHandler(this.btn_Cliente_Click);
             // 
             // btn_ConsultaVentas
             // 
