@@ -42,6 +42,8 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.comboClient = new System.Windows.Forms.ComboBox();
+            this.btn_inicio = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -159,11 +161,42 @@
             this.comboClient.Size = new System.Drawing.Size(121, 21);
             this.comboClient.TabIndex = 13;
             // 
+            // btn_inicio
+            // 
+            this.btn_inicio.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inicio.BackgroundImage = global::PuntodeVenta.Properties.Resources.home;
+            this.btn_inicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn_inicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_inicio.Location = new System.Drawing.Point(12, 12);
+            this.btn_inicio.Name = "btn_inicio";
+            this.btn_inicio.Size = new System.Drawing.Size(31, 30);
+            this.btn_inicio.TabIndex = 14;
+            this.btn_inicio.UseVisualStyleBackColor = false;
+            this.btn_inicio.Click += new System.EventHandler(this.btn_inicio_Click);
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.BackgroundImage = global::PuntodeVenta.Properties.Resources.flechatras;
+            this.btn_regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.Location = new System.Drawing.Point(12, 327);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(38, 30);
+            this.btn_regresar.TabIndex = 15;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 362);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.comboClient);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.btn_eliminar);
@@ -178,6 +211,7 @@
             this.Controls.Add(this.lbl_Direccion);
             this.Controls.Add(this.lbl_RFC);
             this.Controls.Add(this.lbl_Nombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaCliente";
             this.Text = "Consulta";
             this.ResumeLayout(false);
@@ -201,5 +235,7 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.ComboBox comboClient;
+        private System.Windows.Forms.Button btn_inicio;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

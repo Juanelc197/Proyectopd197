@@ -39,12 +39,14 @@
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_inicio = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Location = new System.Drawing.Point(13, 77);
+            this.lbl_Nombre.Location = new System.Drawing.Point(12, 143);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(47, 13);
             this.lbl_Nombre.TabIndex = 0;
@@ -53,7 +55,7 @@
             // lbl_Apellido
             // 
             this.lbl_Apellido.AutoSize = true;
-            this.lbl_Apellido.Location = new System.Drawing.Point(13, 155);
+            this.lbl_Apellido.Location = new System.Drawing.Point(12, 221);
             this.lbl_Apellido.Name = "lbl_Apellido";
             this.lbl_Apellido.Size = new System.Drawing.Size(31, 13);
             this.lbl_Apellido.TabIndex = 1;
@@ -62,7 +64,7 @@
             // lbl_Direccion
             // 
             this.lbl_Direccion.AutoSize = true;
-            this.lbl_Direccion.Location = new System.Drawing.Point(12, 228);
+            this.lbl_Direccion.Location = new System.Drawing.Point(11, 294);
             this.lbl_Direccion.Name = "lbl_Direccion";
             this.lbl_Direccion.Size = new System.Drawing.Size(55, 13);
             this.lbl_Direccion.TabIndex = 2;
@@ -71,7 +73,7 @@
             // lbl_Telefono
             // 
             this.lbl_Telefono.AutoSize = true;
-            this.lbl_Telefono.Location = new System.Drawing.Point(13, 297);
+            this.lbl_Telefono.Location = new System.Drawing.Point(12, 363);
             this.lbl_Telefono.Name = "lbl_Telefono";
             this.lbl_Telefono.Size = new System.Drawing.Size(52, 13);
             this.lbl_Telefono.TabIndex = 3;
@@ -80,7 +82,7 @@
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(13, 366);
+            this.lbl_Email.Location = new System.Drawing.Point(12, 432);
             this.lbl_Email.Name = "lbl_Email";
             this.lbl_Email.Size = new System.Drawing.Size(38, 13);
             this.lbl_Email.TabIndex = 4;
@@ -88,35 +90,35 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(67, 69);
+            this.txt_nombre.Location = new System.Drawing.Point(66, 135);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 5;
             // 
             // txt_rfc
             // 
-            this.txt_rfc.Location = new System.Drawing.Point(51, 147);
+            this.txt_rfc.Location = new System.Drawing.Point(50, 213);
             this.txt_rfc.Name = "txt_rfc";
             this.txt_rfc.Size = new System.Drawing.Size(100, 20);
             this.txt_rfc.TabIndex = 6;
             // 
             // txt_direccion
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(74, 220);
+            this.txt_direccion.Location = new System.Drawing.Point(73, 286);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(100, 20);
             this.txt_direccion.TabIndex = 7;
             // 
             // txt_telefono
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(72, 289);
+            this.txt_telefono.Location = new System.Drawing.Point(71, 355);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(100, 20);
             this.txt_telefono.TabIndex = 8;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(58, 358);
+            this.txt_email.Location = new System.Drawing.Point(57, 424);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(100, 20);
             this.txt_email.TabIndex = 9;
@@ -130,11 +132,45 @@
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
             // 
+            // btn_inicio
+            // 
+            this.btn_inicio.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inicio.BackgroundImage = global::PuntodeVenta.Properties.Resources.home;
+            this.btn_inicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_inicio.FlatAppearance.BorderSize = 0;
+            this.btn_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_inicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inicio.Location = new System.Drawing.Point(12, 12);
+            this.btn_inicio.Name = "btn_inicio";
+            this.btn_inicio.Size = new System.Drawing.Size(31, 30);
+            this.btn_inicio.TabIndex = 11;
+            this.btn_inicio.UseVisualStyleBackColor = false;
+            this.btn_inicio.Click += new System.EventHandler(this.btn_inicio_Click);
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.BackgroundImage = global::PuntodeVenta.Properties.Resources.flechatras;
+            this.btn_regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_regresar.FlatAppearance.BorderSize = 0;
+            this.btn_regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn_regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.Location = new System.Drawing.Point(427, 12);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(47, 30);
+            this.btn_regresar.TabIndex = 12;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 441);
+            this.ClientSize = new System.Drawing.Size(486, 521);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_telefono);
@@ -146,6 +182,7 @@
             this.Controls.Add(this.lbl_Direccion);
             this.Controls.Add(this.lbl_Apellido);
             this.Controls.Add(this.lbl_Nombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarCliente";
             this.Text = "Agregar Clientes";
             this.ResumeLayout(false);
@@ -166,5 +203,7 @@
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_inicio;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

@@ -37,16 +37,17 @@
             // 
             // btn_Producto
             // 
-            this.btn_Producto.Location = new System.Drawing.Point(65, 108);
+            this.btn_Producto.Location = new System.Drawing.Point(12, 98);
             this.btn_Producto.Name = "btn_Producto";
             this.btn_Producto.Size = new System.Drawing.Size(75, 23);
             this.btn_Producto.TabIndex = 0;
             this.btn_Producto.Text = "Producto";
             this.btn_Producto.UseVisualStyleBackColor = true;
+            this.btn_Producto.Click += new System.EventHandler(this.btn_Producto_Click);
             // 
             // btn_Cotizacion
             // 
-            this.btn_Cotizacion.Location = new System.Drawing.Point(552, 107);
+            this.btn_Cotizacion.Location = new System.Drawing.Point(391, 210);
             this.btn_Cotizacion.Name = "btn_Cotizacion";
             this.btn_Cotizacion.Size = new System.Drawing.Size(75, 23);
             this.btn_Cotizacion.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btn_Venta
             // 
-            this.btn_Venta.Location = new System.Drawing.Point(56, 304);
+            this.btn_Venta.Location = new System.Drawing.Point(12, 210);
             this.btn_Venta.Name = "btn_Venta";
             this.btn_Venta.Size = new System.Drawing.Size(75, 23);
             this.btn_Venta.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // btn_Cliente
             // 
-            this.btn_Cliente.Location = new System.Drawing.Point(611, 317);
+            this.btn_Cliente.Location = new System.Drawing.Point(391, 98);
             this.btn_Cliente.Name = "btn_Cliente";
             this.btn_Cliente.Size = new System.Drawing.Size(75, 23);
             this.btn_Cliente.TabIndex = 3;
@@ -74,7 +75,7 @@
             // 
             // btn_ConsultaVentas
             // 
-            this.btn_ConsultaVentas.Location = new System.Drawing.Point(487, 491);
+            this.btn_ConsultaVentas.Location = new System.Drawing.Point(184, 271);
             this.btn_ConsultaVentas.Name = "btn_ConsultaVentas";
             this.btn_ConsultaVentas.Size = new System.Drawing.Size(140, 23);
             this.btn_ConsultaVentas.TabIndex = 4;
@@ -85,12 +86,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 546);
+            this.ClientSize = new System.Drawing.Size(525, 397);
             this.Controls.Add(this.btn_ConsultaVentas);
             this.Controls.Add(this.btn_Cliente);
             this.Controls.Add(this.btn_Venta);
             this.Controls.Add(this.btn_Cotizacion);
             this.Controls.Add(this.btn_Producto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Frm_Menu";
             this.Text = "Menú";
             this.ResumeLayout(false);

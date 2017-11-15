@@ -23,5 +23,12 @@ namespace PuntodeVenta
             Cliente.Menu_Cliente from = new Cliente.Menu_Cliente();
             from.Show();
         }
+
+        private void btn_Producto_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Producto.Menu_Producto from = new Producto.Menu_Producto();
+            from.Show();
+        }
     }
 }

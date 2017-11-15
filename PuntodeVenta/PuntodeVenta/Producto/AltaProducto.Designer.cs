@@ -37,6 +37,8 @@
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.btn_inicio = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Producto
@@ -112,11 +114,43 @@
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = true;
             // 
+            // btn_inicio
+            // 
+            this.btn_inicio.BackColor = System.Drawing.Color.Transparent;
+            this.btn_inicio.BackgroundImage = global::PuntodeVenta.Properties.Resources.home;
+            this.btn_inicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_inicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btn_inicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_inicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_inicio.Location = new System.Drawing.Point(12, 12);
+            this.btn_inicio.Name = "btn_inicio";
+            this.btn_inicio.Size = new System.Drawing.Size(31, 30);
+            this.btn_inicio.TabIndex = 9;
+            this.btn_inicio.UseVisualStyleBackColor = false;
+            this.btn_inicio.Click += new System.EventHandler(this.btn_inicio_Click);
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.BackgroundImage = global::PuntodeVenta.Properties.Resources.flechatras;
+            this.btn_regresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.Location = new System.Drawing.Point(12, 301);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(47, 30);
+            this.btn_regresar.TabIndex = 10;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // AltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 336);
+            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txt_precio);
             this.Controls.Add(this.txt_cantidad);
@@ -126,6 +160,7 @@
             this.Controls.Add(this.lbl_cantidad);
             this.Controls.Add(this.lbl_Descripcion);
             this.Controls.Add(this.lbl_Producto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaProducto";
             this.Text = "Agregar Productos";
             this.ResumeLayout(false);
@@ -144,5 +179,7 @@
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button btn_inicio;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

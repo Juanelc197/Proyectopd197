@@ -19,10 +19,25 @@ namespace PuntodeVenta.Cliente
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             AgregarCliente from = new AgregarCliente();
             from.Show();
-        
+            this.Close();
+
+        }
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            Frm_Menu from = new Frm_Menu();
+            from.Show();
+            this.Close();
+        }
+
+        private void btn_Consulta_Click(object sender, EventArgs e)
+        {
+            ConsultaCliente from = new ConsultaCliente();
+            from.Show();
+            this.Close();
         }
     }
 }

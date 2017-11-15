@@ -16,5 +16,26 @@ namespace PuntodeVenta.Producto
         {
             InitializeComponent();
         }
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            Frm_Menu from = new Frm_Menu();
+            from.Show();
+            this.Close();
+        }
+
+        private void btn_altaproducto_Click(object sender, EventArgs e)
+        {
+            AltaProducto from = new AltaProducto();
+            from.Show();
+            this.Close();
+        }
+
+        private void btn_consultaproducto_Click(object sender, EventArgs e)
+        {
+            ConsultaProductos from = new ConsultaProductos();
+            from.Show();
+            this.Close();
+        }
     }
 }
