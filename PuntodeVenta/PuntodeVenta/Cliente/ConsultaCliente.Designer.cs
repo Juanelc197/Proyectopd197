@@ -44,6 +44,7 @@
             this.comboClient = new System.Windows.Forms.ComboBox();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
+            this.lbl_con = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -134,6 +135,7 @@
             this.btn_Editar.TabIndex = 10;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // btn_eliminar
             // 
@@ -143,20 +145,22 @@
             this.btn_eliminar.TabIndex = 11;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(115, 13);
+            this.btn_buscar.Location = new System.Drawing.Point(82, 12);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.btn_buscar.TabIndex = 12;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // comboClient
             // 
             this.comboClient.FormattingEnabled = true;
-            this.comboClient.Location = new System.Drawing.Point(209, 12);
+            this.comboClient.Location = new System.Drawing.Point(163, 14);
             this.comboClient.Name = "comboClient";
             this.comboClient.Size = new System.Drawing.Size(121, 21);
             this.comboClient.TabIndex = 13;
@@ -190,11 +194,21 @@
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
+            // lbl_con
+            // 
+            this.lbl_con.AutoSize = true;
+            this.lbl_con.Location = new System.Drawing.Point(291, 21);
+            this.lbl_con.Name = "lbl_con";
+            this.lbl_con.Size = new System.Drawing.Size(14, 13);
+            this.lbl_con.TabIndex = 16;
+            this.lbl_con.Text = "#";
+            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 362);
+            this.Controls.Add(this.lbl_con);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.comboClient);
@@ -214,6 +228,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaCliente";
             this.Text = "Consulta";
+            this.Load += new System.EventHandler(this.ConsultaCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +252,6 @@
         private System.Windows.Forms.ComboBox comboClient;
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Label lbl_con;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,19 @@ namespace PuntodeVenta.Cliente
             Menu_Cliente from = new Menu_Cliente();
             from.Show();
             this.Close();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            OleDbCommand com = new OleDbCommand();
+            OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+
+            com.CommandText = "insert into ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) VALUES ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','" + txt_direccion.Text + "','" + txt_telefono.Text + "','" + txt_email.Text + "')";
+            com.Connection = cnn;
+            cnn.Open();
+            com.ExecuteNonQuery();
+            MessageBox.Show("Guardado exitoso");
+            cnn.Close();
         }
     }
 }

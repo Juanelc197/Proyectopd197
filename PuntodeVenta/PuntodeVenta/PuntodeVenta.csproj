@@ -58,6 +58,7 @@
     <Compile Include="Cliente\ConsultaCliente.Designer.cs">
       <DependentUpon>ConsultaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\LlenarConex.cs" />
     <Compile Include="Cliente\Menu_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
