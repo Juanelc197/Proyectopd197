@@ -42,6 +42,7 @@
             this.combProductos = new System.Windows.Forms.ComboBox();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
+            this.lbl_cont = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Producto
@@ -88,6 +89,7 @@
             this.btn_editar.TabIndex = 4;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_Eliminar
             // 
@@ -97,6 +99,7 @@
             this.btn_Eliminar.TabIndex = 5;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // txt_producto
             // 
@@ -134,6 +137,7 @@
             this.btn_buscar.TabIndex = 10;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // combProductos
             // 
@@ -173,11 +177,21 @@
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
+            // lbl_cont
+            // 
+            this.lbl_cont.AutoSize = true;
+            this.lbl_cont.Location = new System.Drawing.Point(341, 192);
+            this.lbl_cont.Name = "lbl_cont";
+            this.lbl_cont.Size = new System.Drawing.Size(14, 13);
+            this.lbl_cont.TabIndex = 14;
+            this.lbl_cont.Text = "#";
+            // 
             // ConsultaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 420);
+            this.Controls.Add(this.lbl_cont);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.combProductos);
@@ -195,6 +209,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaProductos";
             this.Text = "Consulta Productos";
+            this.Load += new System.EventHandler(this.ConsultaProductos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +231,6 @@
         private System.Windows.Forms.ComboBox combProductos;
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Label lbl_cont;
     }
 }

@@ -45,6 +45,8 @@
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.lbl_con = new System.Windows.Forms.Label();
+            this.lbl_fecha = new System.Windows.Forms.Label();
+            this.datefechacliente = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -139,7 +141,7 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Location = new System.Drawing.Point(255, 327);
+            this.btn_eliminar.Location = new System.Drawing.Point(255, 369);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
             this.btn_eliminar.TabIndex = 11;
@@ -187,7 +189,7 @@
             this.btn_regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_regresar.Location = new System.Drawing.Point(12, 327);
+            this.btn_regresar.Location = new System.Drawing.Point(12, 362);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(38, 30);
             this.btn_regresar.TabIndex = 15;
@@ -203,11 +205,29 @@
             this.lbl_con.TabIndex = 16;
             this.lbl_con.Text = "#";
             // 
+            // lbl_fecha
+            // 
+            this.lbl_fecha.AutoSize = true;
+            this.lbl_fecha.Location = new System.Drawing.Point(12, 336);
+            this.lbl_fecha.Name = "lbl_fecha";
+            this.lbl_fecha.Size = new System.Drawing.Size(40, 13);
+            this.lbl_fecha.TabIndex = 17;
+            this.lbl_fecha.Text = "Fecha:";
+            // 
+            // datefechacliente
+            // 
+            this.datefechacliente.Location = new System.Drawing.Point(59, 329);
+            this.datefechacliente.Name = "datefechacliente";
+            this.datefechacliente.Size = new System.Drawing.Size(200, 20);
+            this.datefechacliente.TabIndex = 18;
+            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 362);
+            this.ClientSize = new System.Drawing.Size(342, 404);
+            this.Controls.Add(this.datefechacliente);
+            this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.lbl_con);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_inicio);
@@ -253,5 +273,7 @@
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Label lbl_con;
+        private System.Windows.Forms.Label lbl_fecha;
+        private System.Windows.Forms.DateTimePicker datefechacliente;
     }
 }

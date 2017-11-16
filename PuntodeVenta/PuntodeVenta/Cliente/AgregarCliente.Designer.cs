@@ -41,6 +41,8 @@
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
+            this.lbl_fecha = new System.Windows.Forms.Label();
+            this.datefechaCliente = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -165,11 +167,29 @@
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
+            // lbl_fecha
+            // 
+            this.lbl_fecha.AutoSize = true;
+            this.lbl_fecha.Location = new System.Drawing.Point(13, 479);
+            this.lbl_fecha.Name = "lbl_fecha";
+            this.lbl_fecha.Size = new System.Drawing.Size(40, 13);
+            this.lbl_fecha.TabIndex = 13;
+            this.lbl_fecha.Text = "Fecha:";
+            // 
+            // datefechaCliente
+            // 
+            this.datefechaCliente.Location = new System.Drawing.Point(60, 471);
+            this.datefechaCliente.Name = "datefechaCliente";
+            this.datefechaCliente.Size = new System.Drawing.Size(200, 20);
+            this.datefechaCliente.TabIndex = 14;
+            // 
             // AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 521);
+            this.Controls.Add(this.datefechaCliente);
+            this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_inicio);
             this.Controls.Add(this.btn_guardar);
@@ -206,5 +226,7 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
+        private System.Windows.Forms.Label lbl_fecha;
+        private System.Windows.Forms.DateTimePicker datefechaCliente;
     }
 }

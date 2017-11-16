@@ -83,6 +83,7 @@
     <Compile Include="Producto\ConsultaProductos.Designer.cs">
       <DependentUpon>ConsultaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\LlenarComb.cs" />
     <Compile Include="Producto\Menu_Producto.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -34,7 +34,7 @@ namespace PuntodeVenta.Cliente
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            string cadena = "Select * from Cliente where Nombre ='" + comboClient.Text + "' ";
+            string cadena = "Select * from ClienteTB where Nombre ='" + comboClient.Text + "' ";
 
             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
             OleDbCommand comando = new OleDbCommand(cadena, cnn);
@@ -49,7 +49,8 @@ namespace PuntodeVenta.Cliente
                 txt_rfc.Text = leer["RFC"].ToString();
                 txt_direccion.Text = leer["Direccion"].ToString();
                 txt_telefono.Text = leer["Telefono"].ToString();
-                txt_email.Text = leer["E-mail"].ToString();
+                txt_email.Text = leer["Email"].ToString();
+                this.datefechacliente.Text = leer["FechaCliente"].ToString();
                 lbl_con.Text = leer["Id"].ToString();
 
                 //comInfo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -77,7 +78,7 @@ namespace PuntodeVenta.Cliente
             con.Open();
 
             cmd.Connection = con;
-            String query = "Delete from Cliente where Id=" + lbl_con.Text;
+            String query = "Delete from ClienteTB where Id=" + lbl_con.Text;
             cmd.CommandText = @query;
             cmd.ExecuteNonQuery();
             MessageBox.Show("Eliminado :D");
@@ -90,13 +91,14 @@ namespace PuntodeVenta.Cliente
             {
                 OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("update Cliente set Nombre= @nombre, RFC= @rfc, Direccion= @direccion, Telefono= @telefono, E-mail= @e-mail where Id = @id", con);
+                OleDbCommand cmd = new OleDbCommand("update ClienteTB set Nombre= @nombre, RFC= @rfc, Direccion= @direccion, Telefono= @telefono, Email= @email, FechaCliente= @fechac where Id = @id", con);
 
                 cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
                 cmd.Parameters.AddWithValue("@direccion", txt_direccion.Text);
                 cmd.Parameters.AddWithValue("@telefono", txt_telefono.Text);
-                cmd.Parameters.AddWithValue("@e-mail", txt_email.Text);
+                cmd.Parameters.AddWithValue("@email", txt_email.Text);
+                cmd.Parameters.AddWithValue("@fechac", this.datefechacliente.Text);
                 cmd.Parameters.AddWithValue("@id", lbl_con.Text);
 
                 cmd.ExecuteNonQuery();

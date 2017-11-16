@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,19 @@ namespace PuntodeVenta.Producto
             Frm_Menu from = new Frm_Menu();
             from.Show();
             this.Close();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            OleDbCommand com = new OleDbCommand();
+            OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+            cnn.Open();
+            com.CommandText = "INSERT INTO ProductoTB (Producto, Descripcion, Cantidad, Precio) values ('" + txt_producto.Text + "','" + txt_descripcion.Text + "','" + txt_cantidad.Text + "','" + txt_precio.Text +"')";
+            com.Connection = cnn;
+
+            com.ExecuteNonQuery();
+            MessageBox.Show("Guardado exitoso");
+            cnn.Close();
         }
     }
 }
