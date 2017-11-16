@@ -38,7 +38,7 @@ namespace PuntodeVenta.Cliente
             OleDbCommand com = new OleDbCommand();
             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
 
-            com.CommandText = "insert into ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) VALUES ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','" + txt_direccion.Text + "','" + txt_telefono.Text + "','" + txt_email.Text + "')";
+            com.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','"+ txt_direccion.Text + "','" + txt_telefono.Text + "','"+ txt_email.Text + "')";
             com.Connection = cnn;
             cnn.Open();
             com.ExecuteNonQuery();
