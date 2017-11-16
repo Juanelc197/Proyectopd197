@@ -36,14 +36,40 @@ namespace PuntodeVenta.Cliente
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             OleDbCommand com = new OleDbCommand();
-            OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
 
-            com.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','"+ txt_direccion.Text + "','" + txt_telefono.Text + "','"+ txt_email.Text + "')";
-            com.Connection = cnn;
-            cnn.Open();
-            com.ExecuteNonQuery();
-            MessageBox.Show("Guardado exitoso");
-            cnn.Close();
+             com.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','"+ txt_direccion.Text + "','" + txt_telefono.Text + "','"+ txt_email.Text + "')";
+             com.Connection = cnn;
+             cnn.Open();
+             com.ExecuteNonQuery();
+             MessageBox.Show("Guardado exitoso");
+             cnn.Close(); 
+
+            /*  try
+              {
+
+                  OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EjemProyec.accdb");
+                  //con.Open();
+                  OleDbCommand cmd = new OleDbCommand("Insert into ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail)" + "Values (@Nombre, @RFC, @Direccion, @Telefono, @E-mail)", con);
+
+                  cmd.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','" + txt_direccion.Text + "','" + txt_telefono.Text + "','" + txt_email.Text + "')";
+                  cmd.Connection = con;
+                  con.Open();
+                  //cmd.CommandText = "Insert into ClienteTB (Nombre, RFC, Direccion, Telefono, E-mail)" + "Values (@Nombre, @RFC, @Direccion, @Telefono, @E-mail)";
+                  /* cmd.Parameters.AddWithValue("@Nombre", txt_nombre.Text);
+                   cmd.Parameters.AddWithValue("@RFC", txt_rfc.Text);
+                   cmd.Parameters.AddWithValue("@Direccion", txt_direccion.Text);
+                   cmd.Parameters.AddWithValue("@Telefono", txt_telefono.Text);
+                   cmd.Parameters.AddWithValue("@E-mail", txt_email.Text); 
+
+                  cmd.ExecuteNonQuery();
+                  MessageBox.Show("Completado");
+                  con.Close();
+              }
+              catch
+              {
+                  MessageBox.Show("Error");
+              } */
         }
     }
 }
