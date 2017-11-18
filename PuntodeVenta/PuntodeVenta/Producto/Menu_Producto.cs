@@ -37,5 +37,10 @@ namespace PuntodeVenta.Producto
             from.Show();
             this.Close();
         }
+
+        private void Menu_Producto_Load(object sender, EventArgs e)
+        {
+            panelcolor.BackColor = Color.FromArgb(90, Color.Black);
+        }
     }
 }

@@ -30,5 +30,10 @@ namespace PuntodeVenta
             Producto.Menu_Producto from = new Producto.Menu_Producto();
             from.Show();
         }
+
+        private void Frm_Menu_Load(object sender, EventArgs e)
+        {
+            panelcolor.BackColor = Color.FromArgb(90, Color.Black);
+        }
     }
 }

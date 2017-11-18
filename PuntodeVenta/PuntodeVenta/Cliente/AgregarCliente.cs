@@ -35,10 +35,13 @@ namespace PuntodeVenta.Cliente
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            
+
             OleDbCommand com = new OleDbCommand();
             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
             cnn.Open();
-            com.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, Email, FechaCliente) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','"+ txt_direccion.Text + "','" + txt_telefono.Text + "','"+ txt_email.Text + "','" + this.datefechaCliente.Text + "')";
+            com.CommandText = "INSERT INTO ClienteTB (Nombre, RFC, Direccion, Telefono, Email, FechaCliente) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','"+ txt_direccion.Text + "','" + txt_telefono.Text + "','"+ txt_email.Text + "','" + datefechaCliente.Value.Date + "')";
+            //com.CommandText = "INSERT INTO ClienteTB (FechaCliente) values (#' & this.datefechaCliente. & '#)";
             com.Connection = cnn;
              
             com.ExecuteNonQuery();
@@ -46,6 +49,11 @@ namespace PuntodeVenta.Cliente
             cnn.Close(); 
 
             
+        }
+
+        private void AgregarCliente_Load(object sender, EventArgs e)
+        {
+            panelcolor.BackColor = Color.FromArgb(90, Color.Black);
         }
     }
 }

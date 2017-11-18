@@ -44,5 +44,10 @@ namespace PuntodeVenta.Producto
             MessageBox.Show("Guardado exitoso");
             cnn.Close();
         }
+
+        private void AltaProducto_Load(object sender, EventArgs e)
+        {
+            panelcolor.BackColor = Color.FromArgb(90, Color.Black);
+        }
     }
 }

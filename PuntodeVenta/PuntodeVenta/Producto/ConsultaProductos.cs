@@ -112,6 +112,33 @@ namespace PuntodeVenta.Producto
         {
             LlenarComb c = new LlenarComb();
             c.ItemLLenar(combProductos);
+
+            panelcolor.BackColor = Color.FromArgb(90, Color.Black);
+        }
+
+        private void btn_verdatos_Click(object sender, EventArgs e)
+        {
+            OleDbCommand com = new OleDbCommand();
+
+            try
+            {
+                OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+                com.Connection = cnn;
+                cnn.Open();
+                string query = "select Producto, Descripcion, Cantidad, Precio from ProductoTB";
+                com.CommandText = query;
+
+                OleDbDataAdapter da = new OleDbDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataverproductos.DataSource = dt;
+
+                com.Clone();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar" + ex.ToString());
+            }
         }
     }
 }

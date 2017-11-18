@@ -142,6 +142,57 @@
   <ItemGroup>
     <None Include="Resources\home.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consulta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1delsel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2delsel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3delsel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrodecompras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultaventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo-abierto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar-pagina-opcion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar-foto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa-de-busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo4delsel.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -39,5 +39,15 @@ namespace PuntodeVenta.Cliente
             from.Show();
             this.Close();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Menu_Cliente_Load(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(90, Color.Black);
+        }
     }
 }
