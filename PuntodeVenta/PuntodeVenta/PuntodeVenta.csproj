@@ -65,6 +65,18 @@
     <Compile Include="Cliente\Menu_Cliente.Designer.cs">
       <DependentUpon>Menu_Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ventas.Designer.cs">
+      <DependentUpon>Form_ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Cotización.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Cotización.Designer.cs">
+      <DependentUpon>Frm_Cotización.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\Menu_Cliente.resx">
       <DependentUpon>Menu_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ventas.resx">
+      <DependentUpon>Form_ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Cotización.resx">
+      <DependentUpon>Frm_Cotización.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
