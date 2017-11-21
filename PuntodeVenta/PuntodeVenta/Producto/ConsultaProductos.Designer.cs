@@ -292,6 +292,7 @@
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Productos";
             this.Load += new System.EventHandler(this.ConsultaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataverproductos)).EndInit();

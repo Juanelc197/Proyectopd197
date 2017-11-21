@@ -249,6 +249,7 @@
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Clientes";
             this.Load += new System.EventHandler(this.AgregarCliente_Load);
             this.panelcolor.ResumeLayout(false);

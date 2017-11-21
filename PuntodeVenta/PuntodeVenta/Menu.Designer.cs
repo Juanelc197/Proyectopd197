@@ -34,9 +34,9 @@
             this.btn_Cliente = new System.Windows.Forms.Button();
             this.btn_ConsultaVentas = new System.Windows.Forms.Button();
             this.panelcolor = new System.Windows.Forms.Panel();
-            this.lbl_titulo = new System.Windows.Forms.Label();
-            this.lbl_titulodos = new System.Windows.Forms.Label();
             this.lbl_titulotres = new System.Windows.Forms.Label();
+            this.lbl_titulodos = new System.Windows.Forms.Label();
+            this.lbl_titulo = new System.Windows.Forms.Label();
             this.panelcolor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.btn_Cotizacion.Size = new System.Drawing.Size(75, 63);
             this.btn_Cotizacion.TabIndex = 1;
             this.btn_Cotizacion.UseVisualStyleBackColor = true;
+            this.btn_Cotizacion.Click += new System.EventHandler(this.btn_Cotizacion_Click);
             // 
             // btn_Venta
             // 
@@ -79,6 +80,7 @@
             this.btn_Venta.Size = new System.Drawing.Size(75, 63);
             this.btn_Venta.TabIndex = 2;
             this.btn_Venta.UseVisualStyleBackColor = true;
+            this.btn_Venta.Click += new System.EventHandler(this.btn_Venta_Click);
             // 
             // btn_Cliente
             // 
@@ -106,6 +108,7 @@
             this.btn_ConsultaVentas.Size = new System.Drawing.Size(75, 63);
             this.btn_ConsultaVentas.TabIndex = 4;
             this.btn_ConsultaVentas.UseVisualStyleBackColor = true;
+            this.btn_ConsultaVentas.Click += new System.EventHandler(this.btn_ConsultaVentas_Click);
             // 
             // panelcolor
             // 
@@ -123,17 +126,17 @@
             this.panelcolor.Size = new System.Drawing.Size(525, 397);
             this.panelcolor.TabIndex = 5;
             // 
-            // lbl_titulo
+            // lbl_titulotres
             // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(189, 95);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(173, 31);
-            this.lbl_titulo.TabIndex = 5;
-            this.lbl_titulo.Text = "Bienvenidos";
+            this.lbl_titulotres.AutoSize = true;
+            this.lbl_titulotres.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_titulotres.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulotres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_titulotres.Location = new System.Drawing.Point(230, 155);
+            this.lbl_titulotres.Name = "lbl_titulotres";
+            this.lbl_titulotres.Size = new System.Drawing.Size(82, 24);
+            this.lbl_titulotres.TabIndex = 7;
+            this.lbl_titulotres.Text = "DELSEL";
             // 
             // lbl_titulodos
             // 
@@ -147,17 +150,17 @@
             this.lbl_titulodos.TabIndex = 6;
             this.lbl_titulodos.Text = "a";
             // 
-            // lbl_titulotres
+            // lbl_titulo
             // 
-            this.lbl_titulotres.AutoSize = true;
-            this.lbl_titulotres.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_titulotres.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulotres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_titulotres.Location = new System.Drawing.Point(230, 155);
-            this.lbl_titulotres.Name = "lbl_titulotres";
-            this.lbl_titulotres.Size = new System.Drawing.Size(82, 24);
-            this.lbl_titulotres.TabIndex = 7;
-            this.lbl_titulotres.Text = "DELSEL";
+            this.lbl_titulo.AutoSize = true;
+            this.lbl_titulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_titulo.Location = new System.Drawing.Point(189, 95);
+            this.lbl_titulo.Name = "lbl_titulo";
+            this.lbl_titulo.Size = new System.Drawing.Size(173, 31);
+            this.lbl_titulo.TabIndex = 5;
+            this.lbl_titulo.Text = "Bienvenidos";
             // 
             // Frm_Menu
             // 
@@ -169,6 +172,7 @@
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Frm_Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú";
             this.Load += new System.EventHandler(this.Frm_Menu_Load);
             this.panelcolor.ResumeLayout(false);

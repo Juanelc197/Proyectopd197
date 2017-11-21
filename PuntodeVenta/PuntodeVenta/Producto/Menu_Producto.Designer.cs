@@ -32,8 +32,8 @@
             this.btn_consultaproducto = new System.Windows.Forms.Button();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.panelcolor = new System.Windows.Forms.Panel();
-            this.lbl_agregar = new System.Windows.Forms.Label();
             this.lbl_Consultar = new System.Windows.Forms.Label();
+            this.lbl_agregar = new System.Windows.Forms.Label();
             this.panelcolor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,18 +95,6 @@
             this.panelcolor.Size = new System.Drawing.Size(427, 321);
             this.panelcolor.TabIndex = 3;
             // 
-            // lbl_agregar
-            // 
-            this.lbl_agregar.AutoSize = true;
-            this.lbl_agregar.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_agregar.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_agregar.ForeColor = System.Drawing.Color.White;
-            this.lbl_agregar.Location = new System.Drawing.Point(65, 125);
-            this.lbl_agregar.Name = "lbl_agregar";
-            this.lbl_agregar.Size = new System.Drawing.Size(55, 13);
-            this.lbl_agregar.TabIndex = 4;
-            this.lbl_agregar.Text = "Agregar ";
-            // 
             // lbl_Consultar
             // 
             this.lbl_Consultar.AutoSize = true;
@@ -119,6 +107,18 @@
             this.lbl_Consultar.TabIndex = 5;
             this.lbl_Consultar.Text = "Consultar ";
             // 
+            // lbl_agregar
+            // 
+            this.lbl_agregar.AutoSize = true;
+            this.lbl_agregar.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_agregar.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_agregar.ForeColor = System.Drawing.Color.White;
+            this.lbl_agregar.Location = new System.Drawing.Point(65, 125);
+            this.lbl_agregar.Name = "lbl_agregar";
+            this.lbl_agregar.Size = new System.Drawing.Size(55, 13);
+            this.lbl_agregar.TabIndex = 4;
+            this.lbl_agregar.Text = "Agregar ";
+            // 
             // Menu_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +129,7 @@
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_Producto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Producto_Load);
             this.panelcolor.ResumeLayout(false);

@@ -50,7 +50,7 @@ namespace PuntodeVenta.Cliente
                 txt_direccion.Text = leer["Direccion"].ToString();
                 txt_telefono.Text = leer["Telefono"].ToString();
                 txt_email.Text = leer["Email"].ToString();
-                this.datefechacliente.Text = leer["FechaCliente"].ToString();
+                //this.datefechacliente.Text = leer["FechaCliente"].ToString();
                 lbl_con.Text = leer["Id"].ToString();
 
                 //comInfo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -91,14 +91,14 @@ namespace PuntodeVenta.Cliente
             {
                 OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("update ClienteTB set Nombre= @nombre, RFC= @rfc, Direccion= @direccion, Telefono= @telefono, Email= @email, FechaCliente= @fechac where Id = @id", con);
+                OleDbCommand cmd = new OleDbCommand("update ClienteTB set Nombre= @nombre, RFC= @rfc, Direccion= @direccion, Telefono= @telefono, Email= @email where Id = @id", con);
 
                 cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
                 cmd.Parameters.AddWithValue("@direccion", txt_direccion.Text);
                 cmd.Parameters.AddWithValue("@telefono", txt_telefono.Text);
                 cmd.Parameters.AddWithValue("@email", txt_email.Text);
-                cmd.Parameters.AddWithValue("@fechac", this.datefechacliente.Text);
+                //cmd.Parameters.AddWithValue("@fechac", this.datefechacliente.Text);
                 cmd.Parameters.AddWithValue("@id", lbl_con.Text);
 
                 cmd.ExecuteNonQuery();

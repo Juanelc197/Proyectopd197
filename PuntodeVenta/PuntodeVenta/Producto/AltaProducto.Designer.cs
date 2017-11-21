@@ -220,6 +220,7 @@
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Productos";
             this.Load += new System.EventHandler(this.AltaProducto_Load);
             this.panelcolor.ResumeLayout(false);

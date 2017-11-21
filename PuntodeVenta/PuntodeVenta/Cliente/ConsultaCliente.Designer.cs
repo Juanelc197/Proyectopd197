@@ -42,8 +42,6 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.comboClient = new System.Windows.Forms.ComboBox();
             this.lbl_con = new System.Windows.Forms.Label();
-            this.lbl_fecha = new System.Windows.Forms.Label();
-            this.datefechacliente = new System.Windows.Forms.DateTimePicker();
             this.datamostrardatos = new System.Windows.Forms.DataGridView();
             this.btn_verdatos = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
@@ -199,22 +197,7 @@
             this.lbl_con.Size = new System.Drawing.Size(22, 24);
             this.lbl_con.TabIndex = 16;
             this.lbl_con.Text = "#";
-            // 
-            // lbl_fecha
-            // 
-            this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Location = new System.Drawing.Point(26, 404);
-            this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(40, 13);
-            this.lbl_fecha.TabIndex = 17;
-            this.lbl_fecha.Text = "Fecha:";
-            // 
-            // datefechacliente
-            // 
-            this.datefechacliente.Location = new System.Drawing.Point(73, 397);
-            this.datefechacliente.Name = "datefechacliente";
-            this.datefechacliente.Size = new System.Drawing.Size(200, 20);
-            this.datefechacliente.TabIndex = 18;
+            this.lbl_con.Visible = false;
             // 
             // datamostrardatos
             // 
@@ -330,19 +313,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(478, 679);
             this.Controls.Add(this.datamostrardatos);
-            this.Controls.Add(this.datefechacliente);
-            this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.comboClient);
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta";
             this.Load += new System.EventHandler(this.ConsultaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datamostrardatos)).EndInit();
             this.panelcolor.ResumeLayout(false);
             this.panelcolor.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -365,8 +346,6 @@
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Label lbl_con;
-        private System.Windows.Forms.Label lbl_fecha;
-        private System.Windows.Forms.DateTimePicker datefechacliente;
         private System.Windows.Forms.Button btn_verdatos;
         private System.Windows.Forms.DataGridView datamostrardatos;
         private System.Windows.Forms.Panel panelcolor;
