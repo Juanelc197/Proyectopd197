@@ -38,8 +38,6 @@
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.lbl_fecha = new System.Windows.Forms.Label();
-            this.datefechaCliente = new System.Windows.Forms.DateTimePicker();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.btn_inicio = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
@@ -143,22 +141,6 @@
             this.txt_email.Size = new System.Drawing.Size(284, 20);
             this.txt_email.TabIndex = 9;
             // 
-            // lbl_fecha
-            // 
-            this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Location = new System.Drawing.Point(66, 402);
-            this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(40, 13);
-            this.lbl_fecha.TabIndex = 13;
-            this.lbl_fecha.Text = "Fecha:";
-            // 
-            // datefechaCliente
-            // 
-            this.datefechaCliente.Location = new System.Drawing.Point(155, 402);
-            this.datefechaCliente.Name = "datefechaCliente";
-            this.datefechaCliente.Size = new System.Drawing.Size(200, 20);
-            this.datefechaCliente.TabIndex = 14;
-            // 
             // btn_regresar
             // 
             this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
@@ -239,8 +221,6 @@
             this.BackgroundImage = global::PuntodeVenta.Properties.Resources.fondo3delsel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(609, 457);
-            this.Controls.Add(this.datefechaCliente);
-            this.Controls.Add(this.lbl_fecha);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_telefono);
             this.Controls.Add(this.txt_direccion);
@@ -274,8 +254,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_inicio;
         private System.Windows.Forms.Button btn_regresar;
-        private System.Windows.Forms.Label lbl_fecha;
-        private System.Windows.Forms.DateTimePicker datefechaCliente;
         private System.Windows.Forms.Panel panelcolor;
         private System.Windows.Forms.Label lbl_titulo;
     }
