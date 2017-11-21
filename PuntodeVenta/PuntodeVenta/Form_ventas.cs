@@ -17,6 +17,8 @@ namespace PuntodeVenta
 {
     public partial class Form_ventas : Form
     {
+        
+
         public Form_ventas()
         {
             InitializeComponent();
@@ -145,6 +147,9 @@ namespace PuntodeVenta
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            
+
+
             try
             {
                 OleDbCommand com = new OleDbCommand();
@@ -275,6 +280,7 @@ namespace PuntodeVenta
         }
         private void PdF()
         {
+            
             Document doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.InitialDirectory = @"C:";
@@ -301,7 +307,8 @@ namespace PuntodeVenta
                 string remito = "Autorizo: Juanelc197";
                 string envio = "Fecha:" + DateTime.Now.ToString();
 
-                Chunk chunk = new Chunk("Reporte de General Usuarios", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD));
+                Chunk chunk = new Chunk("DELSEL", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD));
+                
                 doc.Add(new Paragraph(chunk));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
@@ -367,6 +374,12 @@ namespace PuntodeVenta
             Frm_Menu from = new Frm_Menu();
             from.Show();
             this.Close();
+        }
+
+        private void txt_total_TextChanged(object sender, EventArgs e)
+        {
+            Convercion c = new Convercion();
+            lbl_letra.Text = c.enletras(txt_total.Text).ToLower();
         }
     }
 }

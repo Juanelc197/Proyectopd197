@@ -62,6 +62,7 @@
             this.groupFormadepago = new System.Windows.Forms.GroupBox();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panelcolor = new System.Windows.Forms.Panel();
+            this.lbl_letra = new System.Windows.Forms.Label();
             this.txt_Precio = new System.Windows.Forms.TextBox();
             this.txt_conCant = new System.Windows.Forms.TextBox();
             this.txt_iva = new System.Windows.Forms.TextBox();
@@ -344,6 +345,7 @@
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(100, 20);
             this.txt_total.TabIndex = 26;
+            this.txt_total.TextChanged += new System.EventHandler(this.txt_total_TextChanged);
             // 
             // btn_venta
             // 
@@ -431,6 +433,7 @@
             // 
             // panelcolor
             // 
+            this.panelcolor.Controls.Add(this.lbl_letra);
             this.panelcolor.Controls.Add(this.txt_Precio);
             this.panelcolor.Controls.Add(this.txt_conCant);
             this.panelcolor.Controls.Add(this.txt_iva);
@@ -462,6 +465,18 @@
             this.panelcolor.Name = "panelcolor";
             this.panelcolor.Size = new System.Drawing.Size(674, 670);
             this.panelcolor.TabIndex = 40;
+            // 
+            // lbl_letra
+            // 
+            this.lbl_letra.AutoSize = true;
+            this.lbl_letra.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_letra.ForeColor = System.Drawing.Color.White;
+            this.lbl_letra.Location = new System.Drawing.Point(12, 645);
+            this.lbl_letra.Name = "lbl_letra";
+            this.lbl_letra.Size = new System.Drawing.Size(95, 13);
+            this.lbl_letra.TabIndex = 45;
+            this.lbl_letra.Text = "Total en letra...";
             // 
             // txt_Precio
             // 
@@ -578,5 +593,6 @@
         private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.TextBox txt_conCant;
         private System.Windows.Forms.TextBox txt_Precio;
+        private System.Windows.Forms.Label lbl_letra;
     }
 }

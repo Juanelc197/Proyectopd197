@@ -70,6 +70,7 @@
       <DependentUpon>Menu_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="ConexionItem.cs" />
+    <Compile Include="Convercion.cs" />
     <Compile Include="DetalleV.cs">
       <SubType>Form</SubType>
     </Compile>
