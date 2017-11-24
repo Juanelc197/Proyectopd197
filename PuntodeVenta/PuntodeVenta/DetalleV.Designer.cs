@@ -29,10 +29,19 @@
         private void InitializeComponent()
         {
             this.btn_regresar = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.monthAntes = new System.Windows.Forms.MonthCalendar();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.panelcolor = new System.Windows.Forms.Panel();
+            this.monthDespues = new System.Windows.Forms.MonthCalendar();
+            this.lbl_Antes = new System.Windows.Forms.Label();
+            this.lbl_Despues = new System.Windows.Forms.Label();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.dataMostrarDatos = new System.Windows.Forms.DataGridView();
+            this.lbl_nombre = new System.Windows.Forms.Label();
+            this.comboCliente = new System.Windows.Forms.ComboBox();
+            this.txt_Antes = new System.Windows.Forms.TextBox();
             this.panelcolor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMostrarDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_regresar
@@ -50,11 +59,12 @@
             this.btn_regresar.UseVisualStyleBackColor = false;
             this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
-            // monthCalendar1
+            // monthAntes
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(99, 100);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.monthAntes.Location = new System.Drawing.Point(18, 51);
+            this.monthAntes.Name = "monthAntes";
+            this.monthAntes.TabIndex = 1;
+            this.monthAntes.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthAntes_DateChanged);
             // 
             // lbl_titulo
             // 
@@ -70,6 +80,15 @@
             // 
             // panelcolor
             // 
+            this.panelcolor.Controls.Add(this.txt_Antes);
+            this.panelcolor.Controls.Add(this.comboCliente);
+            this.panelcolor.Controls.Add(this.lbl_nombre);
+            this.panelcolor.Controls.Add(this.dataMostrarDatos);
+            this.panelcolor.Controls.Add(this.btn_buscar);
+            this.panelcolor.Controls.Add(this.lbl_Despues);
+            this.panelcolor.Controls.Add(this.lbl_Antes);
+            this.panelcolor.Controls.Add(this.monthDespues);
+            this.panelcolor.Controls.Add(this.monthAntes);
             this.panelcolor.Controls.Add(this.lbl_titulo);
             this.panelcolor.Controls.Add(this.btn_regresar);
             this.panelcolor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,6 +97,78 @@
             this.panelcolor.Size = new System.Drawing.Size(768, 468);
             this.panelcolor.TabIndex = 3;
             // 
+            // monthDespues
+            // 
+            this.monthDespues.Location = new System.Drawing.Point(502, 51);
+            this.monthDespues.Name = "monthDespues";
+            this.monthDespues.TabIndex = 3;
+            // 
+            // lbl_Antes
+            // 
+            this.lbl_Antes.AutoSize = true;
+            this.lbl_Antes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Antes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Antes.ForeColor = System.Drawing.Color.White;
+            this.lbl_Antes.Location = new System.Drawing.Point(96, 249);
+            this.lbl_Antes.Name = "lbl_Antes";
+            this.lbl_Antes.Size = new System.Drawing.Size(51, 13);
+            this.lbl_Antes.TabIndex = 4;
+            this.lbl_Antes.Text = "Antes...";
+            // 
+            // lbl_Despues
+            // 
+            this.lbl_Despues.AutoSize = true;
+            this.lbl_Despues.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Despues.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Despues.ForeColor = System.Drawing.Color.White;
+            this.lbl_Despues.Location = new System.Drawing.Point(609, 249);
+            this.lbl_Despues.Name = "lbl_Despues";
+            this.lbl_Despues.Size = new System.Drawing.Size(68, 13);
+            this.lbl_Despues.TabIndex = 5;
+            this.lbl_Despues.Text = "Despues...";
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Location = new System.Drawing.Point(12, 433);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscar.TabIndex = 6;
+            this.btn_buscar.Text = "Ver";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // dataMostrarDatos
+            // 
+            this.dataMostrarDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMostrarDatos.Location = new System.Drawing.Point(12, 277);
+            this.dataMostrarDatos.Name = "dataMostrarDatos";
+            this.dataMostrarDatos.Size = new System.Drawing.Size(744, 150);
+            this.dataMostrarDatos.TabIndex = 7;
+            // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Location = new System.Drawing.Point(278, 74);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(47, 13);
+            this.lbl_nombre.TabIndex = 8;
+            this.lbl_nombre.Text = "Nombre:";
+            // 
+            // comboCliente
+            // 
+            this.comboCliente.FormattingEnabled = true;
+            this.comboCliente.Location = new System.Drawing.Point(279, 91);
+            this.comboCliente.Name = "comboCliente";
+            this.comboCliente.Size = new System.Drawing.Size(121, 21);
+            this.comboCliente.TabIndex = 9;
+            // 
+            // txt_Antes
+            // 
+            this.txt_Antes.Location = new System.Drawing.Point(190, 241);
+            this.txt_Antes.Name = "txt_Antes";
+            this.txt_Antes.Size = new System.Drawing.Size(100, 20);
+            this.txt_Antes.TabIndex = 10;
+            // 
             // DetalleV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,14 +176,15 @@
             this.BackgroundImage = global::PuntodeVenta.Properties.Resources.fondo4delsel;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(768, 468);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panelcolor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetalleV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle Venta";
             this.Load += new System.EventHandler(this.DetalleV_Load);
             this.panelcolor.ResumeLayout(false);
             this.panelcolor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMostrarDatos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,8 +192,16 @@
         #endregion
 
         private System.Windows.Forms.Button btn_regresar;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar monthAntes;
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Panel panelcolor;
+        private System.Windows.Forms.MonthCalendar monthDespues;
+        private System.Windows.Forms.Label lbl_Despues;
+        private System.Windows.Forms.Label lbl_Antes;
+        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.ComboBox comboCliente;
+        private System.Windows.Forms.Label lbl_nombre;
+        private System.Windows.Forms.DataGridView dataMostrarDatos;
+        private System.Windows.Forms.TextBox txt_Antes;
     }
 }
