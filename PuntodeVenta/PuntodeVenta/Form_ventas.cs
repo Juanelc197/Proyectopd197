@@ -26,7 +26,7 @@ namespace PuntodeVenta
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            string cadena = "Select * from CotizacionTB where RFC ='" + combocliente.Text + "' ";
+            string cadena = "Select * from CotizacionTB where IdCo ='" + combocliente.Text + "' ";
 
             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
             OleDbCommand comando = new OleDbCommand(cadena, cnn);
@@ -48,7 +48,7 @@ namespace PuntodeVenta
                 txt_PU.Text = leer["PrecioUnitario"].ToString();
                 //txt_subtotal.Text = leer["SubTotal"].ToString();
 
-                lbl_con.Text = leer["IdCo"].ToString();
+                //lbl_con.Text = leer["IdCo"].ToString();
 
                 //comInfo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 //comInfo.AutoCompleteSource = AutoCompleteSource.ListItems; 
@@ -75,7 +75,8 @@ namespace PuntodeVenta
         private void Form_ventas_Load(object sender, EventArgs e)
         {
             ConexionItem cliente = new ConexionItem();
-            cliente.ItemCotizacion(combocliente);
+            //cliente.ItemCotizacion(combocliente);
+            cliente.ItemCotizacionid(combocliente);
 
             cliente.ItemProducto(comboproducto);
             /*  try

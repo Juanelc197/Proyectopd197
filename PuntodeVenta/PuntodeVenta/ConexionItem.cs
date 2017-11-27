@@ -85,5 +85,25 @@ namespace PuntodeVenta
                 MessageBox.Show("No se lleno correctamente: " + ex.ToString());
             }
         }
+
+        public void ItemCotizacionid(ComboBox cb)
+        {
+            try
+            {
+                com = new OleDbCommand("Select IdCo from CotizacionTB", cnn);
+                dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr["IdCo"].ToString());
+                    //cb.Items.Add(dr["Cantidad"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se lleno correctamente: " + ex.ToString());
+            }
+        }
     }
 }

@@ -45,14 +45,15 @@ namespace PuntodeVenta
 
             //fecha = Convert.ToString(txt_Antes);
 
-         /*   try
+          try
             {
                 OleDbDataReader dr;
                 OleDbCommand com = new OleDbCommand();
                 OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
                 com.Connection = cnn;
                 cnn.Open();
-                string query = "select Nombre, RFC, Email from CotizacionTB where Fecha ='" + monthAntes.MinDate + "' ";
+                string query = "select IdCo, Nombre, RFC, Email from CotizacionTB where Fecha = @fecha ";
+                com.Parameters.AddWithValue("@fecha", monthAntes.SelectionRange.Start);
                 com.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(com);
@@ -65,7 +66,7 @@ namespace PuntodeVenta
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo llenar" + ex.ToString());
-            } */
+            } 
 
         }
     }
