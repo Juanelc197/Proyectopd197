@@ -26,7 +26,9 @@ namespace PuntodeVenta
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            string cadena = "Select * from CotizacionTB where IdCo ='" + combocliente.Text + "' ";
+            //string cadena = "Select * from CotizacionTB where IdCo ='" + combocliente.Text + "' ";
+            string cadena = "Select * from CotizacionTB where RFC ='" + combocliente.Text + "' ";
+
 
             OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
             OleDbCommand comando = new OleDbCommand(cadena, cnn);
@@ -48,7 +50,7 @@ namespace PuntodeVenta
                 txt_PU.Text = leer["PrecioUnitario"].ToString();
                 //txt_subtotal.Text = leer["SubTotal"].ToString();
 
-                //lbl_con.Text = leer["IdCo"].ToString();
+                lbl_con.Text = leer["IdCo"].ToString();
 
                 //comInfo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 //comInfo.AutoCompleteSource = AutoCompleteSource.ListItems; 
@@ -75,8 +77,8 @@ namespace PuntodeVenta
         private void Form_ventas_Load(object sender, EventArgs e)
         {
             ConexionItem cliente = new ConexionItem();
-            //cliente.ItemCotizacion(combocliente);
-            cliente.ItemCotizacionid(combocliente);
+            cliente.ItemCotizacion(combocliente);
+            //cliente.ItemCotizacionid(combocliente);
 
             cliente.ItemProducto(comboproducto);
             /*  try
@@ -104,7 +106,7 @@ namespace PuntodeVenta
 
             panelcolor.BackColor = Color.FromArgb(90, Color.Black);
 
-            groupFormadepago.BackColor = Color.FromArgb(50, Color.LimeGreen);
+            //groupFormadepago.BackColor = Color.FromArgb(50, Color.LimeGreen);
 
         }
 
@@ -277,6 +279,23 @@ namespace PuntodeVenta
         {
             MessageBox.Show("Gracias por su compra...imprimiendo reporte");
 
+            try
+            {
+                OleDbCommand com = new OleDbCommand();
+                OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+                cnn.Open();
+                com.CommandText = "INSERT INTO VentaTB (Nombre, RFC, Telefono, Email, Direccion, Fecha, Producto, Cantidad, PrecioUnitario, SubTotal, Total, FormaPago) values ('" + txt_nombre.Text + "','" + txt_rfc.Text + "','" + txt_telefono.Text + "','" + txt_email.Text + "','" + txt_direccion.Text + "','" + datefechaventa.Value.Date + "','" + comboproducto.Text + "','" + txt_conCant.Text + "','" + txt_PU.Text + "','" + txt_subtotal.Text + "','" + txt_total.Text + "','" + comboFormadePago.Text + "')";
+                com.Connection = cnn;
+
+                com.ExecuteNonQuery();
+                MessageBox.Show("Guardado exitoso");
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hay problemas " + ex);
+            }
+
             PdF();
         }
         private void PdF()
@@ -320,6 +339,8 @@ namespace PuntodeVenta
                 doc.Add(new Paragraph("------------------------------------------------------------------------------------------"));
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("                       "));
+                doc.Add(new Paragraph("Nombre del Cliente: " + txt_nombre.Text));
+                doc.Add(new Paragraph("Forma de Pago: " + comboFormadePago.Text));
                 doc.Add(new Paragraph("                       "));
                 GenerarDocumento(doc);
                 doc.AddCreationDate();

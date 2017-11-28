@@ -105,5 +105,25 @@ namespace PuntodeVenta
                 MessageBox.Show("No se lleno correctamente: " + ex.ToString());
             }
         }
+
+        public void ItemNombreVenta(ComboBox cb)
+        {
+            try
+            {
+                com = new OleDbCommand("Select Nombre from VentaTB", cnn);
+                dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    cb.Items.Add(dr["Nombre"].ToString());
+                    //cb.Items.Add(dr["Cantidad"].ToString());
+                }
+                //cb.SelectedIndex = 0;
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se lleno correctamente: " + ex.ToString());
+            }
+        }
     }
 }

@@ -28,6 +28,9 @@ namespace PuntodeVenta
         private void DetalleV_Load(object sender, EventArgs e)
         {
             panelcolor.BackColor = Color.FromArgb(90, Color.Black);
+
+            ConexionItem cliente = new ConexionItem();
+            cliente.ItemNombreVenta(comboCliente);
         }
 
         private void monthAntes_DateChanged(object sender, DateRangeEventArgs e)
@@ -39,9 +42,9 @@ namespace PuntodeVenta
         {
 
             //string fecha;
-            //txt_Antes.Text = monthAntes.SelectionRange.Start.ToString("dd/MM/yyyy");
+            lbl_Antes.Text = monthAntes.SelectionRange.Start.ToString("dd/MM/yyyy");
 
-            //lbl_Despues.Text = monthAntes.SelectionRange.Start.ToString("dd/MM/yyyy");
+            lbl_Despues.Text = monthAntes.SelectionRange.Start.ToString("dd/MM/yyyy");
 
             //fecha = Convert.ToString(txt_Antes);
 
@@ -52,7 +55,7 @@ namespace PuntodeVenta
                 OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
                 com.Connection = cnn;
                 cnn.Open();
-                string query = "select IdCo, Nombre, RFC, Email from CotizacionTB where Fecha = @fecha ";
+                string query = "select Folio, Nombre, RFC, Email from VentaTB where Fecha = @fecha ";
                 com.Parameters.AddWithValue("@fecha", monthAntes.SelectionRange.Start);
                 com.CommandText = query;
 
@@ -68,6 +71,58 @@ namespace PuntodeVenta
                 MessageBox.Show("No se pudo llenar" + ex.ToString());
             } 
 
+        }
+
+        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                OleDbDataReader dr;
+                OleDbCommand com = new OleDbCommand();
+                OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+                com.Connection = cnn;
+                cnn.Open();
+                string query = "select Folio, Nombre, RFC, Email from VentaTB where Nombre ='" + comboCliente.Text + "' ";
+                //com.Parameters.AddWithValue("@nombre", mon);
+                com.CommandText = query;
+
+                OleDbDataAdapter da = new OleDbDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataMostrarDatos.DataSource = dt;
+
+                com.Clone();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar" + ex.ToString());
+            }
+        }
+
+        private void comboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                OleDbDataReader dr;
+                OleDbCommand com = new OleDbCommand();
+                OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+                com.Connection = cnn;
+                cnn.Open();
+                string query = "select Folio, Nombre, RFC, Email from VentaTB where FormaPago ='" + comboFormaPago.Text + "' ";
+                //com.Parameters.AddWithValue("@nombre", mon);
+                com.CommandText = query;
+
+                OleDbDataAdapter da = new OleDbDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataMostrarDatos.DataSource = dt;
+
+                com.Clone();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar" + ex.ToString());
+            }
         }
     }
 }
