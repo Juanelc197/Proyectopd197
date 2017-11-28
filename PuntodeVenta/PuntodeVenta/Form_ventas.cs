@@ -341,11 +341,18 @@ namespace PuntodeVenta
                 doc.Add(new Paragraph("                       "));
                 doc.Add(new Paragraph("Nombre del Cliente: " + txt_nombre.Text));
                 doc.Add(new Paragraph("Forma de Pago: " + comboFormadePago.Text));
+                doc.Add(new Paragraph("Telefono: " + txt_telefono.Text));
+                doc.Add(new Paragraph("RFC: " + txt_rfc.Text));
                 doc.Add(new Paragraph("                       "));
                 GenerarDocumento(doc);
                 doc.AddCreationDate();
-                doc.Add(new Paragraph("______________________________________________", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD)));
-                doc.Add(new Paragraph("Firma", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD)));
+                //doc.Add(new Paragraph("______________________________________________", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD)));
+                //doc.Add(new Paragraph("Firma", FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD)));
+                doc.Add(new Paragraph("SubTotal: " + "$" + txt_subtotal.Text));
+                doc.Add(new Paragraph("IVA: " + txt_iva.Text + "%"));
+                doc.Add(new Paragraph("Total: " + "$" + txt_total.Text));
+                doc.Add(new Paragraph("Total en letra: " + lbl_letra.Text));
+                doc.Add(new Paragraph("Forma de Pago: " + comboFormadePago.Text));
                 doc.Close();
                 Process.Start(filename);//Esta parte se puede omitir, si solo se desea guardar el archivo, y que este no se ejecute al instante
             }
