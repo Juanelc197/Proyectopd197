@@ -150,8 +150,26 @@ namespace PuntodeVenta
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            
 
+
+
+          /*  try
+             {
+                 OleDbCommand com = new OleDbCommand();
+                 OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
+                 cnn.Open();
+                 com.Connection = cnn;
+                 //com.CommandText = "insert into VentasTemporalesTB (Producto, Cantidad, Precio) VALUES ('" + comboproducto.Text + "','" + txt_conCant.Text + "','" + txt_PU.Text + "')";
+                 com.CommandText = "insert into VentasTemporalesTB (Producto, Cantidad, Precio, IdVT) VALUES ('" + comboproducto.Text + "','" + txt_conCant.Text + "','" + txt_PU.Text + "','" + lbl_con.Text + "')";
+                 com.ExecuteNonQuery();
+                 //MessageBox.Show("Cliente guardado exitosamente");
+                 cnn.Close();
+             }
+             catch (Exception ex)
+             {
+
+                 MessageBox.Show("No se pudo guardar " + ex);
+             } */
 
             try
             {
@@ -159,24 +177,9 @@ namespace PuntodeVenta
                 OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
                 cnn.Open();
                 com.Connection = cnn;
-                com.CommandText = "insert into VentasTemporalesTB (Producto, Cantidad, Precio) VALUES ('" + comboproducto.Text + "','" + txt_conCant.Text + "','" + txt_PU.Text + "')";
-                com.ExecuteNonQuery();
-                //MessageBox.Show("Cliente guardado exitosamente");
-                cnn.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("No se pudo guardar " + ex);
-            }
-
-            try
-            {
-                OleDbCommand com = new OleDbCommand();
-                OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
-                cnn.Open();
-                com.Connection = cnn;
-                string query = "select Producto, Cantidad, Precio from VentasTemporalesTB";
+                //string query = "select Producto, Cantidad, Precio from VentasTemporalesTB";
+                string query = "select Producto, Cantidad, PrecioUnitario from CotizacionTB where IdCo=" + lbl_con.Text;
+                
                 com.CommandText = query;
 
                 OleDbDataAdapter da = new OleDbDataAdapter(com);
@@ -192,7 +195,7 @@ namespace PuntodeVenta
                 MessageBox.Show("No se pudo llenar el Datagridview: " + ex.ToString());
             }
 
-            try
+          /*  try
             {
                 OleDbCommand com = new OleDbCommand();
                 OleDbConnection cnn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=PuntodeVentaBD.accdb");
@@ -208,14 +211,15 @@ namespace PuntodeVenta
             {
                 //connection.Close();
                 MessageBox.Show("error " + ex);
-            }
+            } */
 
             double subtotal = 0;
             double iva = 0;
 
             foreach (DataGridViewRow row in dataMostrarInfo.Rows)
             {
-                subtotal += Convert.ToDouble(row.Cells["Precio"].Value);
+                //subtotal += Convert.ToDouble(row.Cells["Precio"].Value);
+                subtotal += Convert.ToDouble(row.Cells["PrecioUnitario"].Value);
             }
             txt_subtotal.Text = Convert.ToString(subtotal);
 

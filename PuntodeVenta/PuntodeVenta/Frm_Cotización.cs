@@ -112,6 +112,7 @@ namespace PuntodeVenta
                 cnn.Open();
                 com.Connection = cnn;
                 com.CommandText = "insert into VentasTemporalesTB (Producto, Cantidad, Precio) VALUES ('" + comboProducto.Text + "','" + numericCont.Value + "','" + txt_valorU.Text + "')";
+                //com.CommandText = "insert into CotizacionTB (Producto, Cantidad, PrecioUnitario) VALUES ('" + comboProducto.Text + "','" + numericCont.Value + "','" + txt_valorU.Text + "')";
                 com.ExecuteNonQuery();
                 //MessageBox.Show("Cliente guardado exitosamente");
                 cnn.Close();
@@ -257,6 +258,13 @@ namespace PuntodeVenta
         private void panelcolor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_vercoti_Click(object sender, EventArgs e)
+        {
+            MuestraCoti from = new MuestraCoti();
+            from.Show();
+            this.Close();
         }
     }
 }

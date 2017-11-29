@@ -62,6 +62,7 @@
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.panelcolor = new System.Windows.Forms.Panel();
+            this.btn_vercoti = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataMostrarInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCont)).BeginInit();
             this.panelcolor.SuspendLayout();
@@ -296,7 +297,7 @@
             this.btn_guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Location = new System.Drawing.Point(594, 563);
+            this.btn_guardar.Location = new System.Drawing.Point(594, 544);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(48, 34);
             this.btn_guardar.TabIndex = 27;
@@ -311,7 +312,7 @@
             this.btn_canselar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_canselar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_canselar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_canselar.Location = new System.Drawing.Point(670, 563);
+            this.btn_canselar.Location = new System.Drawing.Point(670, 544);
             this.btn_canselar.Name = "btn_canselar";
             this.btn_canselar.Size = new System.Drawing.Size(48, 34);
             this.btn_canselar.TabIndex = 28;
@@ -384,7 +385,7 @@
             this.btn_agregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_agregar.Location = new System.Drawing.Point(406, 312);
+            this.btn_agregar.Location = new System.Drawing.Point(670, 311);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(48, 34);
             this.btn_agregar.TabIndex = 18;
@@ -408,6 +409,7 @@
             // 
             // panelcolor
             // 
+            this.panelcolor.Controls.Add(this.btn_vercoti);
             this.panelcolor.Controls.Add(this.txt_iva);
             this.panelcolor.Controls.Add(this.btn_regresar);
             this.panelcolor.Controls.Add(this.lbl_titulo);
@@ -437,6 +439,16 @@
             this.panelcolor.Size = new System.Drawing.Size(730, 609);
             this.panelcolor.TabIndex = 49;
             this.panelcolor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelcolor_Paint);
+            // 
+            // btn_vercoti
+            // 
+            this.btn_vercoti.Location = new System.Drawing.Point(13, 574);
+            this.btn_vercoti.Name = "btn_vercoti";
+            this.btn_vercoti.Size = new System.Drawing.Size(102, 23);
+            this.btn_vercoti.TabIndex = 49;
+            this.btn_vercoti.Text = "Ver Cotizacion";
+            this.btn_vercoti.UseVisualStyleBackColor = true;
+            this.btn_vercoti.Click += new System.EventHandler(this.btn_vercoti_Click);
             // 
             // Frm_Cotización
             // 
@@ -506,5 +518,6 @@
         private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Panel panelcolor;
+        private System.Windows.Forms.Button btn_vercoti;
     }
 }
